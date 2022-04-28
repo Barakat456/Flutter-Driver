@@ -5,6 +5,7 @@ import 'package:country_code_picker/country_code_picker.dart';
 import 'package:flutter/services.dart';
 import 'package:trans_app/Views/Authentication/Animation.dart';
 import 'package:trans_app/Views/Authentication/base_auth.dart';
+import 'package:trans_app/screens/step_reg.dart';
 
 class Signup_Screen extends StatefulWidget {
   @override
@@ -34,7 +35,7 @@ class _Signup_ScreenState extends State<Signup_Screen> {
           Color.fromRGBO(249, 168, 37, 1),
         ])),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.end,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             SizedBox(
               height: 25,
@@ -42,7 +43,7 @@ class _Signup_ScreenState extends State<Signup_Screen> {
             FadeAnimation(
                 1.5,
                 Padding(
-                  padding: EdgeInsets.only(right: 400),
+                  padding: EdgeInsets.only(left: 0),
                   child: IconButton(
                     icon: Icon(
                       Icons.arrow_back_ios_outlined,
@@ -58,7 +59,7 @@ class _Signup_ScreenState extends State<Signup_Screen> {
             Padding(
               padding: EdgeInsets.all(20),
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   FadeAnimation(
                     1.5,
@@ -132,7 +133,7 @@ class _Signup_ScreenState extends State<Signup_Screen> {
                                       controller: _firstnameController,
                                       keyboardType: TextInputType.text,
                                       cursorColor: Colors.amberAccent,
-                                      textAlign: TextAlign.right,
+                                      //  textAlign: TextAlign.right,
                                       style: TextStyle(
                                           fontFamily: 'Tajawal',
                                           color: Colors.black,
@@ -147,7 +148,7 @@ class _Signup_ScreenState extends State<Signup_Screen> {
                                           color: Colors.grey,
                                         ),
                                         border: InputBorder.none,
-                                        hintTextDirection: TextDirection.rtl,
+                                        //  hintTextDirection: TextDirection.rtl,
                                         hintText: 'الاسم الاول',
                                         hintStyle: TextStyle(
                                             color: Colors.grey,
@@ -240,7 +241,7 @@ class _Signup_ScreenState extends State<Signup_Screen> {
                                             RegExp('[0-9.,]')),
                                       ],
                                       cursorColor: Colors.amberAccent,
-                                      textAlign: TextAlign.right,
+                                      //  textAlign: TextAlign.right,
                                       style: TextStyle(
                                           fontFamily: 'Tajawal',
                                           color: Colors.black,
@@ -259,9 +260,9 @@ class _Signup_ScreenState extends State<Signup_Screen> {
                                           favorite: ['+20', 'EG'],
                                           showCountryOnly: false,
                                           showOnlyCountryWhenClosed: false,
-                                          alignLeft: false,
+                                          //    alignLeft: false,
                                         ),
-                                        hintTextDirection: TextDirection.rtl,
+                                        //  hintTextDirection: TextDirection.rtl,
                                         hintText: 'رقم الموبايل',
                                         hintStyle: TextStyle(
                                             color: Colors.grey,
@@ -582,11 +583,13 @@ class _Signup_ScreenState extends State<Signup_Screen> {
                             child: FloatingActionButton.extended(
                               heroTag: null,
                               onPressed: () {
-                                /* Navigator.of(context).push(MaterialPageRoute(
-                                    builder: (_) => Signup_Screen()));*/
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => StepperReg()));
                               },
                               label: Text(
-                                'انشئ حساب',
+                                'استكمال البيانات',
                                 style: TextStyle(
                                     fontSize: 20,
                                     fontFamily: 'Tajawal',
@@ -601,7 +604,7 @@ class _Signup_ScreenState extends State<Signup_Screen> {
                         SizedBox(
                           height: 30,
                         ),
-                        FadeAnimation(
+                     /*   FadeAnimation(
                             3.3,
                             Text(
                               "او",
@@ -610,11 +613,11 @@ class _Signup_ScreenState extends State<Signup_Screen> {
                                   fontSize: 22,
                                   fontFamily: 'Tajawal',
                                   fontWeight: FontWeight.w400),
-                            )),
-                        SizedBox(
+                            )),*/
+                     /*  SizedBox(
                           height: 30,
-                        ),
-                        FadeAnimation(
+                        ),*/
+                     /*   FadeAnimation(
                           3.3,
                           SizedBox(
                             width: 175,
@@ -636,7 +639,7 @@ class _Signup_ScreenState extends State<Signup_Screen> {
                               backgroundColor: Colors.blue[900],
                             ),
                           ),
-                        ),
+                        ),*/
                       ],
                     ),
                   ),

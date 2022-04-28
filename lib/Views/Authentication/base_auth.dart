@@ -84,9 +84,17 @@ class _base_ScreenState extends State<base_Screen> {
             ),
             Center(
               child: Padding(
-                  padding: EdgeInsets.only(left: 100.0),
+                  padding: EdgeInsets.only(right: 50.0),
                   child: Row(
                     children: [
+                      Text(
+                        'هل لديك حساب؟',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 20,
+                            fontFamily: 'Tajawal',
+                            fontWeight: FontWeight.w400),
+                      ),
                       InkWell(
                         child: Text(
                           'سجل دخول',
@@ -100,14 +108,6 @@ class _base_ScreenState extends State<base_Screen> {
                           Navigator.of(context).push(MaterialPageRoute(
                               builder: (_) => Signin_Screen()));
                         },
-                      ),
-                      Text(
-                        'هل لديك حساب؟',
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 20,
-                            fontFamily: 'Tajawal',
-                            fontWeight: FontWeight.w400),
                       ),
                     ],
                   )),

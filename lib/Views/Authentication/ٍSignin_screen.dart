@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:trans_app/Views/Authentication/Animation.dart';
 import 'package:trans_app/Views/Authentication/base_auth.dart';
+import 'package:trans_app/screens/drawer.dart';
 
 class Signin_Screen extends StatefulWidget {
   @override
@@ -24,7 +25,7 @@ class _Signin_ScreenState extends State<Signin_Screen> {
           Color.fromRGBO(245, 127, 23, 1),
           Color.fromRGBO(249, 168, 37, 1),
         ])),
-        child: Column(crossAxisAlignment: CrossAxisAlignment.end, children: <
+        child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: <
             Widget>[
           SizedBox(
             height: 25,
@@ -32,7 +33,7 @@ class _Signin_ScreenState extends State<Signin_Screen> {
           FadeAnimation(
               1.5,
               Padding(
-                padding: EdgeInsets.only(right: 400),
+                padding: EdgeInsets.only(left: 0),
                 child: IconButton(
                   icon: Icon(
                     Icons.arrow_back_ios_outlined,
@@ -40,15 +41,20 @@ class _Signin_ScreenState extends State<Signin_Screen> {
                     color: Colors.white,
                   ),
                   onPressed: () {
-                    Navigator.of(context)
-                        .push(MaterialPageRoute(builder: (_) => base_Screen()));
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => base_Screen()));
                   },
                 ),
               )),
           Padding(
-            padding: EdgeInsets.all(20),
+            padding: EdgeInsets.fromLTRB(
+              0,
+              0,
+              20,
+              20,
+            ),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.end,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 FadeAnimation(
                   1.5,
@@ -123,7 +129,7 @@ class _Signin_ScreenState extends State<Signin_Screen> {
                                   controller: _emailController,
                                   keyboardType: TextInputType.text,
                                   cursorColor: Colors.amberAccent,
-                                  textAlign: TextAlign.right,
+                                  // textAlign: TextAlign.right,
                                   style: TextStyle(
                                       fontFamily: 'Tajawal',
                                       color: Colors.black,
@@ -138,11 +144,11 @@ class _Signin_ScreenState extends State<Signin_Screen> {
                                       color: Colors.grey,
                                     ),
                                     border: InputBorder.none,
-                                    hintTextDirection: TextDirection.rtl,
+                                    // hintTextDirection: TextDirection.rtl,
                                     hintText: 'البريد الالكترونى او رقم الهاتف',
                                     hintStyle: TextStyle(
                                         color: Colors.grey,
-                                        fontSize: 22,
+                                        fontSize: 21,
                                         fontFamily: 'Tajawal',
                                         fontWeight: FontWeight.w400),
                                   ),
@@ -204,7 +210,7 @@ class _Signin_ScreenState extends State<Signin_Screen> {
                                       },
                                     ),
                                     border: InputBorder.none,
-                                    hintTextDirection: TextDirection.rtl,
+                                    //   hintTextDirection: TextDirection.rtl,
                                     hintText: 'كلمة السر',
                                     hintStyle: TextStyle(
                                         color: Colors.grey,
@@ -239,8 +245,10 @@ class _Signin_ScreenState extends State<Signin_Screen> {
                           child: FloatingActionButton.extended(
                             heroTag: null,
                             onPressed: () {
-                              /* Navigator.of(context).push(MaterialPageRoute(
-                                    builder: (_) => Signup_Screen()));*/
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => InterFaceDriver()));
                             },
                             label: Text(
                               'سجل دخول',
